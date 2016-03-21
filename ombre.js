@@ -34,9 +34,13 @@ V : 0.0.1
     isShadow.prototype = {
         init:function(){
             for(var i=0; i<this.object.length;i++){
+                var objDim = this.object[i].getBoundingClientRect();
+                console.log(objDim);
                 //Récupère les dimensions de l'objet
-                var objH = this.object[i].getBoundingClientRect().height;
-                var objW = this.object[i].getBoundingClientRect().width;
+                var objH = objDim.height;
+                var objW = objDim.width;
+
+
 
                 //créé une div dans le carré qui sera l'ombre
                 this.object[i].innerHTML+='<div class="shadow"></div>';
